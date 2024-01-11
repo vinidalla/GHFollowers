@@ -7,7 +7,7 @@
 
 import UIKit
 
-//we create this extension to call every time we need to show the alert GFAlertVC on the main thread
+//created this extension to call every time we need to show the alert GFAlertVC on the main thread
 extension UIViewController {
   func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
     DispatchQueue.main.async {

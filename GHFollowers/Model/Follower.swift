@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-struct Follower: Codable {
+//Hashable protocol supports hash function that can filter proporties combine them and represent with an int value
+struct Follower: Codable, Hashable {
   var login: String
   var avatarUrl: String
 }

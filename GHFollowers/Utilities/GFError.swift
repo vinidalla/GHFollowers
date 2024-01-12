@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-enum ErrorMessage: String {
+//GFError conforms to Error protocol, so we can use in the Result of our call
+enum GFError: String, Error {
   case invalidUserName = "This username created an invalid request. Please try again."
   case unableToComplete = "Unable to complete request, please check your internet connection."
   case invalidResponse = "Invalid response from the server. Please try again."

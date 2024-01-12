@@ -10,22 +10,24 @@ import UIKit
 class FollowerListVC: UIViewController {
   
   var username: String!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      view.backgroundColor = UIColor.systemBackground
-      navigationController?.navigationBar.prefersLargeTitles = true
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = UIColor.systemBackground
+    navigationController?.navigationBar.prefersLargeTitles = true
+    
+    NetworkManager.shared.getFollowers(for: username, page: 1) { result in
       
-      NetworkManager.shared.getFollowers(for: username, page: 1) { followers, errorMessage in
-        guard let followers = followers else { //checking error case if we dont have followers call our alert
-          self.presentGFAlertOnMainThread(title: ErrorMessage.badStuffHappend.rawValue, message: errorMessage!.rawValue, buttonTitle: ErrorMessage.ok.rawValue)
-          return
-        }
-        
-        print("Followers.cont = \(followers.count)")
+      switch result {
+      case .success(let followers):
         print(followers)
+      case .failure(let error):
+        self.presentGFAlertOnMainThread(title: "Bad stuff happend",
+                                        message: error.rawValue,
+                                        buttonTitle: "Ok")
       }
     }
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)

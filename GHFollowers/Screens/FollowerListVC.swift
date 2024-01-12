@@ -18,7 +18,7 @@ class FollowerListVC: UIViewController {
       
       NetworkManager.shared.getFollowers(for: username, page: 1) { followers, errorMessage in
         guard let followers = followers else { //checking error case if we dont have followers call our alert
-          self.presentGFAlertOnMainThread(title: "Bad stuff happend", message: errorMessage!, buttonTitle: "Ok")
+          self.presentGFAlertOnMainThread(title: ErrorMessage.badStuffHappend.rawValue, message: errorMessage!.rawValue, buttonTitle: ErrorMessage.ok.rawValue)
           return
         }
         

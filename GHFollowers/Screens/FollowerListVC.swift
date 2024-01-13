@@ -51,10 +51,12 @@ class FollowerListVC: UIViewController {
   }
   
   func getFollowers(username: String?, page: Int) {
+    showLoadingView()
     guard let username = username else { return }
     NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+
       guard let self = self else { return }
-      
+      dismissLoadingView()
       switch result {
       case Result.success(let followers):
         if followers.count < 100 {

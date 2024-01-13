@@ -15,6 +15,7 @@ class FollowerListVC: UIViewController {
   
   var username: String?
   var followers: [Follower] = []
+  var filteredFollowers: [Follower] = []
   var page: Int = 1
   var hasMoreFollowers: Bool = true
 //  var collectionView: UICollectionView!
@@ -28,6 +29,7 @@ class FollowerListVC: UIViewController {
     configureCollectionView()
     getFollowers(username: username ?? "username", page: page)
     configureDataSource()
+    configureSearchController()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +52,15 @@ class FollowerListVC: UIViewController {
     collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
   }
   
+  func configureSearchController() {
+    let searchController = UISearchController()
+    searchController.searchResultsUpdater = self
+    searchController.searchBar.delegate = self
+    searchController.searchBar.placeholder = "Search for a username"
+    searchController.obscuresBackgroundDuringPresentation = false
+    navigationItem.searchController = searchController
+  }
+  
   func getFollowers(username: String?, page: Int) {
     showLoadingView()
     guard let username = username else { return }
@@ -69,7 +80,7 @@ class FollowerListVC: UIViewController {
             self.showEmptyStateView(with: message, in: self.view)
           }
         }
-        self.updateData()
+        self.updateData(on: self.followers)
       case Result.failure(let error):
         self.presentGFAlertOnMainThread(title: "Bad stuff happend",
                                         message: error.rawValue,
@@ -87,7 +98,7 @@ class FollowerListVC: UIViewController {
     })
   }
   
-  func updateData() { //snapshot sets up the initial state of the data that a view displays, we use snapshots to reflect changes to the data that the view displays.
+  func updateData(on followers: [Follower]) { //snapshot sets up the initial state of the data that a view displays, we use snapshots to reflect changes to the data that the view displays.
     var snapShot = NSDiffableDataSourceSnapshot<Section, Follower>()
     snapShot.appendSections([Section.main])
     snapShot.appendItems(followers)
@@ -99,6 +110,7 @@ class FollowerListVC: UIViewController {
 }
 
 extension FollowerListVC: UICollectionViewDelegate {
+  
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     let offsetY = scrollView.contentOffset.y
     let contentHeight = scrollView.contentSize.height
@@ -109,5 +121,19 @@ extension FollowerListVC: UICollectionViewDelegate {
       page += 1
       getFollowers(username: username, page: page)
     }
+  }
+}
+
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
+  
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+    //checking the login name if it contains what is in your filter throw that into the filtered followers array
+    filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+    updateData(on: filteredFollowers)
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    updateData(on: followers)
   }
 }

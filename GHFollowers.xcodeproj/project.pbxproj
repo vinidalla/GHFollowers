@@ -32,6 +32,7 @@
 		4F55809A2B545EFB007F1738 /* GFUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580992B545EFB007F1738 /* GFUserInfoHeaderVC.swift */; };
 		4F55809C2B545F5E007F1738 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55809B2B545F5E007F1738 /* GFSecondaryTitleLabel.swift */; };
 		4F55809E2B547115007F1738 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55809D2B547115007F1738 /* Constants.swift */; };
+		4F5580A02B5480E3007F1738 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55809F2B5480E3007F1738 /* GFItemInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		4F5580992B545EFB007F1738 /* GFUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		4F55809B2B545F5E007F1738 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		4F55809D2B547115007F1738 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4F55809F2B5480E3007F1738 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5580932B5326A5007F1738 /* GFEmptyStateView.swift */,
+				4F55809F2B5480E3007F1738 /* GFItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4F55808A2B50D380007F1738 /* GFAvatarImageView.swift in Sources */,
 				4F5580662B46C62B007F1738 /* SearchVC.swift in Sources */,
 				4F5580742B4F4D0A007F1738 /* GFAlertVC.swift in Sources */,
+				4F5580A02B5480E3007F1738 /* GFItemInfoView.swift in Sources */,
 				4F5580882B50D2DC007F1738 /* FollowerCell.swift in Sources */,
 				4F5580722B4F4C40007F1738 /* GFBodyLabel.swift in Sources */,
 				4F55809A2B545EFB007F1738 /* GFUserInfoHeaderVC.swift in Sources */,

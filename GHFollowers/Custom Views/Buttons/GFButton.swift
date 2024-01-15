@@ -30,4 +30,9 @@ class GFButton: UIButton {
     titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
     translatesAutoresizingMaskIntoConstraints = false //you need this to use autolayout
   }
+  
+  func set(backgroundColor: UIColor, title: String) {
+    self.backgroundColor =  backgroundColor
+    setTitle(title, for: UIControl.State.normal)
+  }
 }

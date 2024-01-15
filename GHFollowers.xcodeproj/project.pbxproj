@@ -36,6 +36,8 @@
 		4F5580A22B548800007F1738 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580A12B548800007F1738 /* GFItemInfoVC.swift */; };
 		4F5580A42B548A85007F1738 /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580A32B548A85007F1738 /* GFRepoItemVC.swift */; };
 		4F5580A62B548CEF007F1738 /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580A52B548CEF007F1738 /* GFFollowerItemVC.swift */; };
+		4F5580A92B54B2BF007F1738 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580A82B54B2BF007F1738 /* Date+Ext.swift */; };
+		4F5580AB2B54B2FF007F1738 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580AA2B54B2FF007F1738 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		4F5580A12B548800007F1738 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 		4F5580A32B548A85007F1738 /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
 		4F5580A52B548CEF007F1738 /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
+		4F5580A82B54B2BF007F1738 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		4F5580AA2B54B2FF007F1738 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				4F5580752B4F5329007F1738 /* UIViewController+Ext.swift */,
+				4F5580A82B54B2BF007F1738 /* Date+Ext.swift */,
+				4F5580AA2B54B2FF007F1738 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				4F55807F2B4F7BB3007F1738 /* User.swift in Sources */,
 				4F55806C2B4D4D77007F1738 /* GFTextField.swift in Sources */,
 				4F5580682B46C66E007F1738 /* FavoriteListVC.swift in Sources */,
+				4F5580AB2B54B2FF007F1738 /* String+Ext.swift in Sources */,
 				4F55806A2B48180D007F1738 /* GFButton.swift in Sources */,
 				4F5580762B4F5329007F1738 /* UIViewController+Ext.swift in Sources */,
 				4F55808C2B52CD9A007F1738 /* UIHelper.swift in Sources */,
@@ -345,6 +352,7 @@
 				4F5580982B545B62007F1738 /* GFError.swift in Sources */,
 				4F55807D2B4F7A10007F1738 /* Follower.swift in Sources */,
 				4F5580702B4F4A72007F1738 /* GFTitleLabel.swift in Sources */,
+				4F5580A92B54B2BF007F1738 /* Date+Ext.swift in Sources */,
 				4F55809C2B545F5E007F1738 /* GFSecondaryTitleLabel.swift in Sources */,
 				4F5580942B5326A5007F1738 /* GFEmptyStateView.swift in Sources */,
 				4F5580812B4FEB0C007F1738 /* NetworkManager.swift in Sources */,

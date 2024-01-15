@@ -19,23 +19,23 @@ class NetworkManager {
     
     //certification that the request worked, otherwise return error
     guard let url = URL(string: endpoint) else {
-      completionHandler(.failure(GFError.invalidUserName))
+      completionHandler(Result.failure(GFError.invalidUserName))
       return
     }
     //URLSession return data, response and error
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       if let _ = error { //handle no internet error
-        completionHandler(.failure(GFError.unableToComplete))
+        completionHandler(Result.failure(GFError.unableToComplete))
         return
       }
       //checking if the response is not nil and the statusCode is 200, which means everything is OK
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-        completionHandler(.failure(GFError.invalidResponse))
+        completionHandler(Result.failure(GFError.invalidResponse))
         return
       }
       //checking if the data is not nil
       guard let data = data else {
-        completionHandler(.failure(GFError.invalidData))
+        completionHandler(Result.failure(GFError.invalidData))
         return
       }
       
@@ -45,9 +45,9 @@ class NetworkManager {
         //try to decode an array of followers from the data
         let followers = try decoder.decode([Follower].self, from: data)
         //everything goes well so we have followers and error is nil
-        completionHandler(.success(followers))
+        completionHandler(Result.success(followers))
       } catch { //error handing
-        completionHandler(.failure(GFError.invalidData))
+        completionHandler(Result.failure(GFError.invalidData))
       }
     }
     
@@ -59,23 +59,23 @@ class NetworkManager {
     
     //certification that the request worked, otherwise return error
     guard let url = URL(string: endpoint) else {
-      completionHandler(.failure(GFError.invalidUserName))
+      completionHandler(Result.failure(GFError.invalidUserName))
       return
     }
     //URLSession return data, response and error
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       if let _ = error { //handle no internet error
-        completionHandler(.failure(GFError.unableToComplete))
+        completionHandler(Result.failure(GFError.unableToComplete))
         return
       }
       //checking if the response is not nil and the statusCode is 200, which means everything is OK
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-        completionHandler(.failure(GFError.invalidResponse))
+        completionHandler(Result.failure(GFError.invalidResponse))
         return
       }
       //checking if the data is not nil
       guard let data = data else {
-        completionHandler(.failure(GFError.invalidData))
+        completionHandler(Result.failure(GFError.invalidData))
         return
       }
       
@@ -85,9 +85,9 @@ class NetworkManager {
         //try to decode an array of followers from the data
         let user = try decoder.decode(User.self, from: data)
         //everything goes well so we have followers and error is nil
-        completionHandler(.success(user))
+        completionHandler(Result.success(user))
       } catch { //error handing
-        completionHandler(.failure(GFError.invalidData))
+        completionHandler(Result.failure(GFError.invalidData))
       }
     }
     

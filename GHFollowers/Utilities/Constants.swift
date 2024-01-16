@@ -5,7 +5,7 @@
 //  Created by Vinícius Dalla Vechia on 14/01/24.
 //
 
-import Foundation
+import UIKit
 
 enum SFSymbols {
   static let location: String = "mappin.and.ellipse"
@@ -15,4 +15,14 @@ enum SFSymbols {
   static let following: String = "person.2"
 }
 
+enum Images {
+  static let ghLogo = UIImage(named: "gh-logo")
+}
 
+enum GeneralStrings {
+  static let getFollowersTitle: String = "Get Followers"
+  static let emptyUserName: String = "Empty Username"
+  static let pleaseEnterUserName: String = "Please enter a username. We need to know who to look for 😃."
+  static let ok: String = "Ok"
+  static let enterUsername: String = "Enter a username"
+}

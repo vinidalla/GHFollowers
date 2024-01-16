@@ -14,3 +14,5 @@ enum SFSymbols {
   static let followers: String = "heart"
   static let following: String = "person.2"
 }
+
+

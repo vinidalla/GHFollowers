@@ -25,4 +25,9 @@ enum GeneralStrings {
   static let pleaseEnterUserName: String = "Please enter a username. We need to know who to look for 😃."
   static let ok: String = "Ok"
   static let enterUsername: String = "Enter a username"
+  static let somethingWentWrong: String = "Something went wrong"
+  static let invalidUrl: String = "Invalid URL"
+  static let invalidAttachedUrl: String = "The url attached to this user is invalid."
+  static let noFollowers: String = "No followers"
+  static let userHasNoFollwers: String = "This user has no followers 😔"
 }

@@ -13,14 +13,13 @@ class GFSecondaryTitleLabel: UILabel {
     configure()
   }
   
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+  convenience init(fontSize: CGFloat) {
+    self.init(frame: CGRect.zero)
+    font = UIFont.systemFont(ofSize: fontSize, weight: UIFont.Weight.medium)
   }
   
-  init(fontSize: CGFloat) {
-    super.init(frame: CGRect.zero)
-    font = UIFont.systemFont(ofSize: fontSize, weight: UIFont.Weight.medium)
-    configure()
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   private func configure() {

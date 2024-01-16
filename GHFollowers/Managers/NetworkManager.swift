@@ -82,6 +82,7 @@ class NetworkManager {
       do {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase //convert snake_case to camelCase
+        decoder.dateDecodingStrategy = JSONDecoder.DateDecodingStrategy.iso8601
         //try to decode an array of followers from the data
         let user = try decoder.decode(User.self, from: data)
         //everything goes well so we have followers and error is nil

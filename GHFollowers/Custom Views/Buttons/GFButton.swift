@@ -8,27 +8,26 @@
 import UIKit
 
 class GFButton: UIButton {
-  override init(frame: CGRect) { //override means that this subclass of UIButton will override the init of UIButton class
-    super.init(frame: frame) //super means that all that apple creates in UIButton will happens first, then this will happen
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     configure()
   }
-  
-  required init?(coder: NSCoder) { //this required is for storyBoard project cases, not for this project
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  init(backgroundColor: UIColor, title: String) { //when we initialize our GFButton this init show up
-    super.init(frame: CGRect.zero)
+
+  convenience init(backgroundColor: UIColor, title: String) {
+    self.init(frame: CGRect.zero)
     self.backgroundColor = backgroundColor
     self.setTitle(title, for: UIControl.State.normal)
-    configure()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   private func configure() {
     layer.cornerRadius = 10
     setTitleColor(UIColor.white, for: UIControl.State.normal)
     titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-    translatesAutoresizingMaskIntoConstraints = false //you need this to use autolayout
+    translatesAutoresizingMaskIntoConstraints = false
   }
   
   func set(backgroundColor: UIColor, title: String) {

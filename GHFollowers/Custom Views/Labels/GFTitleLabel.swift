@@ -14,15 +14,14 @@ class GFTitleLabel: UILabel {
     configure()
   }
   
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
-    super.init(frame: CGRect.zero)
+  convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+    self.init(frame: CGRect.zero)
     self.textAlignment = textAlignment
     self.font = UIFont.systemFont(ofSize: fontSize, weight: UIFont.Weight.bold)
-    configure()
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   private func configure() {

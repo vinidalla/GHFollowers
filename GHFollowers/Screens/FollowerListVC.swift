@@ -23,17 +23,26 @@ class FollowerListVC: UIViewController {
   var page: Int = 1
   var hasMoreFollowers: Bool = true
   var isSearching: Bool = false
-//  var collectionView: UICollectionView!
   var collectionView = UICollectionView(frame: CGRect.zero,
                                         collectionViewLayout: UICollectionViewFlowLayout())
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
   
+  init(username: String) {
+    super.init(nibName: nil, bundle: nil)
+    self.username = username
+    title = username
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureSearchController()
     configureViewController()
+    configureSearchController()
     configureCollectionView()
-    getFollowers(username: username ?? "username", page: page)
+    getFollowers(username: username, page: page)
     configureDataSource()
   }
   

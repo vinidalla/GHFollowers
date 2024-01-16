@@ -9,7 +9,7 @@ import UIKit
 
 class GFAlertVC: UIViewController {
   
-  let containerView = UIView()
+  let containerView = GFAlertContainerView()
   let titleLabel = GFTitleLabel(textAlignment: NSTextAlignment.center, fontSize: 20)
   let messageLabel = GFBodyLabel(textAlignment: NSTextAlignment.center)
   let actionButton = GFButton(backgroundColor: UIColor.systemPink, title: "Ok")
@@ -33,7 +33,7 @@ class GFAlertVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+      view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
       configureContainerView()
       configureTitleLabel()
       configureActionButton()
@@ -42,11 +42,6 @@ class GFAlertVC: UIViewController {
   
   func configureContainerView() {
     view.addSubview(containerView)
-    containerView.backgroundColor = UIColor.systemBackground
-    containerView.layer.cornerRadius = 16
-    containerView.layer.borderWidth = 2
-    containerView.layer.borderColor = UIColor.white.cgColor
-    containerView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -58,7 +53,7 @@ class GFAlertVC: UIViewController {
   
   func configureTitleLabel() {
     containerView.addSubview(titleLabel)
-    titleLabel.text = alertTitle ?? "Something went wrong"
+    titleLabel.text = alertTitle ?? GeneralStrings.somethingWentWrong
     
     NSLayoutConstraint.activate([
       titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
@@ -70,7 +65,7 @@ class GFAlertVC: UIViewController {
   
   func configureActionButton() {
     containerView.addSubview(actionButton)
-    actionButton.setTitle(buttonTitle ?? "Ok", for: UIControl.State.normal)
+    actionButton.setTitle(buttonTitle ?? GeneralStrings.ok, for: UIControl.State.normal)
     actionButton.addTarget(self, action: #selector(dismissVC), for: UIControl.Event.touchUpInside)
     
     NSLayoutConstraint.activate([

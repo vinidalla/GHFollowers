@@ -15,6 +15,7 @@ class FavoriteListVC: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     getFavorites()
+    tableView.reloadData()
   }
   
   override func viewDidLoad() {
@@ -92,9 +93,9 @@ extension FavoriteListVC: UITableViewDataSource, UITableViewDelegate {
     PersistenceManager.updateWith(favorite: favorite, actionType: PersistenceActionType.remove) { [weak self] error in
       guard let self = self else { return }
       guard let error = error else { return }
-      self.presentGFAlertOnMainThread(title: "Unable to remove",
+      self.presentGFAlertOnMainThread(title: GeneralStrings.unableToRemove,
                                       message: error.rawValue,
-                                      buttonTitle: "Ok")
+                                      buttonTitle: GeneralStrings.ok)
     }
   }
 }

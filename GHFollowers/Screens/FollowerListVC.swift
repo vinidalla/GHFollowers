@@ -48,6 +48,7 @@ class FollowerListVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    collectionView.reloadData()
     navigationController?.setNavigationBarHidden(false, animated: true)
     navigationController?.navigationBar.tintColor = UIColor.systemGreen
   }
@@ -74,7 +75,7 @@ class FollowerListVC: UIViewController {
     let searchController = UISearchController()
     searchController.searchResultsUpdater = self
     searchController.searchBar.delegate = self
-    searchController.searchBar.placeholder = "Search for a username"
+    searchController.searchBar.placeholder = GeneralStrings.searchForUsername
     searchController.obscuresBackgroundDuringPresentation = false
     navigationItem.searchController = searchController
   }
@@ -93,16 +94,16 @@ class FollowerListVC: UIViewController {
         }
         self.followers.append(contentsOf: followers)
         if self.followers.isEmpty {
-          let message = "This user doesn't have any followers yet 😁."
+          let message = GeneralStrings.userHasNoFollowers
           DispatchQueue.main.async {
             self.showEmptyStateView(with: message, in: self.view)
           }
         }
         self.updateData(on: self.followers)
       case Result.failure(let error):
-        self.presentGFAlertOnMainThread(title: "Bad stuff happend",
+        self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                         message: error.rawValue,
-                                        buttonTitle: "Ok")
+                                        buttonTitle: GeneralStrings.ok)
       }
     }
   }
@@ -140,21 +141,21 @@ class FollowerListVC: UIViewController {
         PersistenceManager.updateWith(favorite: favorite, actionType: PersistenceActionType.add) { [weak self] error in
           guard let self = self else { return }
           guard let error = error else {
-            self.presentGFAlertOnMainThread(title: "Success!",
-                                            message: "You have successfully favorited this user.",
-                                            buttonTitle: "Nice!")
+            self.presentGFAlertOnMainThread(title: GeneralStrings.success,
+                                            message: GeneralStrings.successfullyFavoriteUser,
+                                            buttonTitle: GeneralStrings.nice)
             return
           }
           
-          self.presentGFAlertOnMainThread(title: "Something went wrong",
+          self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                           message: error.rawValue,
-                                          buttonTitle: "Ok")
+                                          buttonTitle: GeneralStrings.ok)
         }
         
       case Result.failure(let error):
-        self.presentGFAlertOnMainThread(title: "Something went wrong",
+        self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                         message: error.rawValue,
-                                        buttonTitle: "Ok")
+                                        buttonTitle: GeneralStrings.ok)
       }
     }
   }

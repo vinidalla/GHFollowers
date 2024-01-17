@@ -30,6 +30,7 @@ class NetworkManager {
       }
       //checking if the response is not nil and the statusCode is 200, which means everything is OK
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+        print(response)
         completionHandler(Result.failure(GFError.invalidResponse))
         return
       }
@@ -93,5 +94,34 @@ class NetworkManager {
     }
     
     task.resume() //this starts the network call
+  }
+  
+  func downloadAvatarImage(from urlString: String, completionHandler: @escaping (UIImage?) -> Void) {
+    let cacheKey = NSString(string: urlString)
+    
+    if let image = cache.object(forKey: cacheKey) {
+      completionHandler(image)
+      return
+    }
+    
+    guard let url = URL(string: urlString) else {
+      completionHandler(nil)
+      return
+    }
+    
+    let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+      guard let self = self,
+            error == nil,
+            let response = response as? HTTPURLResponse, response.statusCode == 200,
+            let data = data,
+            let image = UIImage(data: data) else {
+        completionHandler(nil)
+        return
+      }
+      
+      self.cache.setObject(image, forKey: cacheKey)
+      completionHandler(image)
+    }
+    task.resume()
   }
 }

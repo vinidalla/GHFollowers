@@ -19,7 +19,7 @@ class GFTabBarController: UITabBarController {
   
   func createSearchNC() -> UINavigationController {
     let searchVC = SearchVC()
-    searchVC.title = "Search"
+    searchVC.title = GeneralStrings.search
     searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.search,
                                        tag: 0)
     return UINavigationController(rootViewController: searchVC)
@@ -27,7 +27,7 @@ class GFTabBarController: UITabBarController {
   
   func createFavoritesNC() -> UINavigationController {
     let favoritesVC = FavoriteListVC()
-    favoritesVC.title = "Favorites"
+    favoritesVC.title = GeneralStrings.favorites
     favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites,
                                           tag: 1)
     return UINavigationController(rootViewController: favoritesVC)

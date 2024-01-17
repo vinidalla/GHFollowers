@@ -17,6 +17,8 @@ enum SFSymbols {
 
 enum Images {
   static let ghLogo = UIImage(named: "gh-logo")
+  static let placeholderImage = UIImage(named: "avatar-placeholder")
+  static let emptyStateLogo = UIImage(named: "empty-state-logo")
 }
 
 enum GeneralStrings {
@@ -29,5 +31,18 @@ enum GeneralStrings {
   static let invalidUrl: String = "Invalid URL"
   static let invalidAttachedUrl: String = "The url attached to this user is invalid."
   static let noFollowers: String = "No followers"
-  static let userHasNoFollwers: String = "This user has no followers 😔"
+  static let userHasNoFollowers: String = "This user has no followers 😔"
+  static let search: String = "Search"
+  static let favorites: String = "Favorites"
+  static let gitHubProfile: String = "GitHub Profile"
+  static let gitHubFollowers: String = "GitHub Followers"
+  static let publicRepos: String = "Public Repos"
+  static let publicGists: String = "Public Gists"
+  static let followers: String = "Followers"
+  static let following: String = "Following"
+  static let unableToRemove: String = "Unable to remove"
+  static let searchForUsername: String = "Search for a username"
+  static let success: String = "Success!"
+  static let successfullyFavoriteUser = "You have successfully favorited this user."
+  static let nice: String = "Nice!"
 }

@@ -12,6 +12,7 @@ enum PersistenceActionType {
 }
 
 enum PersistenceManager {
+  
   static private let defaults = UserDefaults.standard
   
   enum Keys {
@@ -34,7 +35,7 @@ enum PersistenceManager {
           favorites.append(favorite)
           
         case PersistenceActionType.remove:
-          favorites.removeAll { $0.login == favorite.login}
+          favorites.removeAll { $0.login == favorite.login }
         }
         
         completionHandler(save(favorites: favorites))

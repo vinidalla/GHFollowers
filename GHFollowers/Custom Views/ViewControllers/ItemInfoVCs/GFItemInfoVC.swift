@@ -30,13 +30,13 @@ class GFItemInfoVC: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      configureBackgroundView()
-      configureActionButton()
-      configureStackView()
-      layoutUI()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureBackgroundView()
+    configureActionButton()
+    configureStackView()
+    layoutUI()
+  }
   
   private func configureBackgroundView() {
     view.layer.cornerRadius = Spacing.size18
@@ -58,7 +58,7 @@ class GFItemInfoVC: UIViewController {
   }
   
   @objc func actionButtonTapped() {
-    
+    //override to use
   }
   
   private func layoutUI() {

@@ -8,20 +8,23 @@
 import UIKit
 
 enum SFSymbols {
-  static let location: String = "mappin.and.ellipse"
+  
   static let repos: String = "folder"
-  static let gists: String = "text.alignleft"
   static let followers: String = "heart"
   static let following: String = "person.2"
+  static let gists: String = "text.alignleft"
+  static let location: String = "mappin.and.ellipse"
 }
 
 enum Images {
+  
   static let ghLogo = UIImage(named: "gh-logo")
   static let placeholder = UIImage(named: "avatar-placeholder")
   static let emptyStateLogo = UIImage(named: "empty-state-logo")
 }
 
 enum GeneralStrings {
+  
   static let followers: String = "Followers"
   static let following: String = "Following"
   static let getFollowersTitle: String = "Get Followers"
@@ -53,6 +56,7 @@ enum GeneralStrings {
 }
 
 enum Spacing {
+  
   static let size2: CGFloat = 2
   static let size4: CGFloat = 4
   static let size8: CGFloat = 8

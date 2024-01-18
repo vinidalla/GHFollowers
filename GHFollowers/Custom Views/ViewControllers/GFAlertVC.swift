@@ -10,15 +10,13 @@ import UIKit
 class GFAlertVC: UIViewController {
   
   let containerView = GFAlertContainerView()
-  let titleLabel = GFTitleLabel(textAlignment: NSTextAlignment.center, fontSize: 20)
+  let titleLabel = GFTitleLabel(textAlignment: NSTextAlignment.center, fontSize: Spacing.size20)
   let messageLabel = GFBodyLabel(textAlignment: NSTextAlignment.center)
   let actionButton = GFButton(backgroundColor: UIColor.systemPink, title: GeneralStrings.ok)
   
   var alertTitle: String?
   var message: String?
   var buttonTitle: String?
-  
-  let padding: CGFloat = 20
   
   init(title: String, message: String, buttonTitle: String) {
     super.init(nibName: nil, bundle: nil)
@@ -56,9 +54,9 @@ class GFAlertVC: UIViewController {
     titleLabel.text = alertTitle ?? GeneralStrings.somethingWentWrong
     
     NSLayoutConstraint.activate([
-      titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
-      titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-      titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+      titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Spacing.size20),
+      titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Spacing.size20),
+      titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Spacing.size20),
       titleLabel.heightAnchor.constraint(equalToConstant: 28)
     ])
   }
@@ -69,9 +67,9 @@ class GFAlertVC: UIViewController {
     actionButton.addTarget(self, action: #selector(dismissVC), for: UIControl.Event.touchUpInside)
     
     NSLayoutConstraint.activate([
-      actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
-      actionButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-      actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+      actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Spacing.size20),
+      actionButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Spacing.size20),
+      actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Spacing.size20),
       actionButton.heightAnchor.constraint(equalToConstant: 44)
     ])
   }
@@ -82,10 +80,10 @@ class GFAlertVC: UIViewController {
     messageLabel.numberOfLines = 4
     
     NSLayoutConstraint.activate([
-      messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-      messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-      messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-      messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
+      messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Spacing.size8),
+      messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Spacing.size20),
+      messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Spacing.size20),
+      messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -Spacing.size12)
     ])
   }
   

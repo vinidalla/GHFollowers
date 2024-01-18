@@ -26,6 +26,9 @@ enum GeneralStrings {
   static let following: String = "Following"
   static let getFollowersTitle: String = "Get Followers"
   static let noFollowers: String = "No followers"
+  static let notAvailable: String = "Not available"
+  static let noLocationAvailable: String = "No location available"
+  static let noBioAvailable: String = "No bio available"
   static let userHasNoFollowers: String = "This user has no followers 😔"
   static let gitHubFollowers: String = "GitHub Followers"
   static let emptyUserName: String = "Empty Username"
@@ -47,4 +50,22 @@ enum GeneralStrings {
   static let successfullyFavoriteUser = "You have successfully favorited this user."
   static let nice: String = "Nice!"
   static let ok: String = "Ok"
+}
+
+enum Spacing {
+  static let size2: CGFloat = 2
+  static let size4: CGFloat = 4
+  static let size8: CGFloat = 8
+  static let size10: CGFloat = 10
+  static let size12: CGFloat = 12
+  static let size14: CGFloat = 14
+  static let size16: CGFloat = 16
+  static let size18: CGFloat = 18
+  static let size20: CGFloat = 20
+  static let size24: CGFloat = 24
+  static let size26: CGFloat = 26
+  static let size40: CGFloat = 40
+  static let size50: CGFloat = 50
+  static let size60: CGFloat = 60
+  static let size200: CGFloat = 200
 }

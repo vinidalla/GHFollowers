@@ -37,9 +37,9 @@ class GFUserInfoHeaderVC: UIViewController {
   func configureUIElements() {
     downloadAvatarImageHelper()
     usernameLabel.text = user?.login
-    nameLabel.text = user?.name ?? "Not available"
-    locationLabel.text = user?.location ?? "No location available"
-    bioLabel.text = user?.bio ?? "No bio available"
+    nameLabel.text = user?.name ?? GeneralStrings.notAvailable
+    locationLabel.text = user?.location ?? GeneralStrings.noLocationAvailable
+    bioLabel.text = user?.bio ?? GeneralStrings.noBioAvailable
     bioLabel.numberOfLines = 3
     
     locationImageView.image = UIImage(systemName: SFSymbols.location)
@@ -66,40 +66,38 @@ class GFUserInfoHeaderVC: UIViewController {
   }
   
   func layoutUI() {
-    let padding: CGFloat = 20
-    let textImagePadding: CGFloat = 12
     locationImageView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
+      avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Spacing.size20),
       avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       avatarImageView.widthAnchor.constraint(equalToConstant: 90),
       avatarImageView.heightAnchor.constraint(equalToConstant: 90),
       
       usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
-      usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
+      usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Spacing.size12),
       usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       usernameLabel.heightAnchor.constraint(equalToConstant: 38),
       
-      nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 8),
-      nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
+      nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: Spacing.size8),
+      nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Spacing.size12),
       nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      nameLabel.heightAnchor.constraint(equalToConstant: padding),
+      nameLabel.heightAnchor.constraint(equalToConstant: Spacing.size20),
       
-      locationImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
-      locationImageView.widthAnchor.constraint(equalToConstant: padding),
-      locationImageView.heightAnchor.constraint(equalToConstant: padding),
+      locationImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Spacing.size12),
+      locationImageView.widthAnchor.constraint(equalToConstant: Spacing.size20),
+      locationImageView.heightAnchor.constraint(equalToConstant: Spacing.size20),
       locationImageView.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
       
       locationLabel.centerYAnchor.constraint(equalTo: locationImageView.centerYAnchor),
       locationLabel.leadingAnchor.constraint(equalTo: locationImageView.trailingAnchor, constant: 5),
       locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      locationLabel.heightAnchor.constraint(equalToConstant: padding),
+      locationLabel.heightAnchor.constraint(equalToConstant: Spacing.size20),
       
-      bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
+      bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Spacing.size12),
       bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
       bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      bioLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: textImagePadding),
+      bioLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Spacing.size12),
       bioLabel.heightAnchor.constraint(equalToConstant: 90)
     ])
   }

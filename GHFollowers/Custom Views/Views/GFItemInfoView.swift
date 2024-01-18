@@ -14,8 +14,8 @@ enum ItemInfoType {
 class GFItemInfoView: UIView {
   
   let symbolImageView: UIImageView = UIImageView()
-  let titleLabel = GFTitleLabel(textAlignment: NSTextAlignment.left, fontSize: 14)
-  let countLabel = GFTitleLabel(textAlignment: NSTextAlignment.center, fontSize: 14)
+  let titleLabel = GFTitleLabel(textAlignment: NSTextAlignment.left, fontSize: Spacing.size14)
+  let countLabel = GFTitleLabel(textAlignment: NSTextAlignment.center, fontSize: Spacing.size14)
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -38,18 +38,18 @@ class GFItemInfoView: UIView {
     NSLayoutConstraint.activate([
       symbolImageView.topAnchor.constraint(equalTo: self.topAnchor),
       symbolImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-      symbolImageView.widthAnchor.constraint(equalToConstant: 20),
-      symbolImageView.heightAnchor.constraint(equalToConstant: 20),
+      symbolImageView.widthAnchor.constraint(equalToConstant: Spacing.size20),
+      symbolImageView.heightAnchor.constraint(equalToConstant: Spacing.size20),
       
       titleLabel.centerYAnchor.constraint(equalTo: symbolImageView.centerYAnchor),
-      titleLabel.leadingAnchor.constraint(equalTo: symbolImageView.trailingAnchor, constant: 12),
+      titleLabel.leadingAnchor.constraint(equalTo: symbolImageView.trailingAnchor, constant: Spacing.size12),
       titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-      titleLabel.heightAnchor.constraint(equalToConstant: 18),
+      titleLabel.heightAnchor.constraint(equalToConstant: Spacing.size18),
       
-      countLabel.topAnchor.constraint(equalTo: symbolImageView.bottomAnchor, constant: 4),
+      countLabel.topAnchor.constraint(equalTo: symbolImageView.bottomAnchor, constant: Spacing.size4),
       countLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
       countLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-      countLabel.heightAnchor.constraint(equalToConstant: 18)
+      countLabel.heightAnchor.constraint(equalToConstant: Spacing.size18)
     ])
   }
   

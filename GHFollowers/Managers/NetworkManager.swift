@@ -30,7 +30,6 @@ class NetworkManager {
       }
       //checking if the response is not nil and the statusCode is 200, which means everything is OK
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-        print(response)
         completionHandler(Result.failure(GFError.invalidResponse))
         return
       }

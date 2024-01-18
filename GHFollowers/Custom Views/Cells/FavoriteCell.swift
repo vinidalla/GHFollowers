@@ -11,7 +11,7 @@ class FavoriteCell: UITableViewCell {
   static let reuseID = "FavoriteCell"
   
   let avatarImageView = GFAvatarImageView(frame: CGRect.zero)
-  let usernameLabel = GFTitleLabel(textAlignment: NSTextAlignment.left, fontSize: 26)
+  let usernameLabel = GFTitleLabel(textAlignment: NSTextAlignment.left, fontSize: Spacing.size26)
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,18 +37,17 @@ class FavoriteCell: UITableViewCell {
     addSubview(usernameLabel)
     
     accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-    let padding: CGFloat = 12
     
     NSLayoutConstraint.activate([
       avatarImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-      avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-      avatarImageView.heightAnchor.constraint(equalToConstant: 60),
-      avatarImageView.widthAnchor.constraint(equalToConstant: 60),
+      avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Spacing.size12),
+      avatarImageView.heightAnchor.constraint(equalToConstant: Spacing.size60),
+      avatarImageView.widthAnchor.constraint(equalToConstant: Spacing.size60),
       
       usernameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-      usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
-      usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-      usernameLabel.heightAnchor.constraint(equalToConstant: 40)
+      usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Spacing.size24),
+      usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Spacing.size12),
+      usernameLabel.heightAnchor.constraint(equalToConstant: Spacing.size40)
     ])
   }
 }

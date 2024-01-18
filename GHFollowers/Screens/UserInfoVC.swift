@@ -84,7 +84,6 @@ class UserInfoVC: UIViewController {
   }
   
   func layoutUI() {
-    let padding: CGFloat = 20
     let itemHeight: CGFloat = 140
     
     itemViews = [headerView,
@@ -96,8 +95,8 @@ class UserInfoVC: UIViewController {
       itemView.translatesAutoresizingMaskIntoConstraints = false
       
       NSLayoutConstraint.activate([
-        itemView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-        itemView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding)
+        itemView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Spacing.size20),
+        itemView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Spacing.size20)
       ])
     }
     
@@ -105,14 +104,14 @@ class UserInfoVC: UIViewController {
       headerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
       headerView.heightAnchor.constraint(equalToConstant: 180),
       
-      itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
+      itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Spacing.size20),
       itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
       
-      itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
+      itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: Spacing.size20),
       itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
       
-      dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-      dateLabel.heightAnchor.constraint(equalToConstant: 50)
+      dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: Spacing.size20),
+      dateLabel.heightAnchor.constraint(equalToConstant: Spacing.size50)
     ])
   }
   

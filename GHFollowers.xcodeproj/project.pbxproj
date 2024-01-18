@@ -41,6 +41,7 @@
 		4F5580B22B5694C8007F1738 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580B12B5694C8007F1738 /* GFTabBarController.swift */; };
 		4F5580B42B56B260007F1738 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580B32B56B260007F1738 /* GFAlertContainerView.swift */; };
 		4F5580B62B56DE63007F1738 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580B52B56DE63007F1738 /* Date+Ext.swift */; };
+		4F5580BE2B593382007F1738 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580BD2B593382007F1738 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		4F5580B12B5694C8007F1738 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
 		4F5580B32B56B260007F1738 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 		4F5580B52B56DE63007F1738 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		4F5580BD2B593382007F1738 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				4F5580752B4F5329007F1738 /* UIViewController+Ext.swift */,
 				4F5580B52B56DE63007F1738 /* Date+Ext.swift */,
+				4F5580BD2B593382007F1738 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				4F5580982B545B62007F1738 /* GFError.swift in Sources */,
 				4F55807D2B4F7A10007F1738 /* Follower.swift in Sources */,
 				4F5580702B4F4A72007F1738 /* GFTitleLabel.swift in Sources */,
+				4F5580BE2B593382007F1738 /* UIView+Ext.swift in Sources */,
 				4F55809C2B545F5E007F1738 /* GFSecondaryTitleLabel.swift in Sources */,
 				4F5580942B5326A5007F1738 /* GFEmptyStateView.swift in Sources */,
 				4F5580AF2B55AE25007F1738 /* FavoriteCell.swift in Sources */,

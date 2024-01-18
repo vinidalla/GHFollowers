@@ -8,8 +8,7 @@
 import UIKit
 
 protocol UserInfoVCDelegate: AnyObject {
-  func didTapGitHubProfile(user: User)
-  func didTapGetFollowers(user: User)
+  func didRequestFollowers(username: String)
 }
 
 class UserInfoVC: UIViewController {
@@ -21,7 +20,7 @@ class UserInfoVC: UIViewController {
   
   var itemViews: [UIView] = []
   var username: String?
-  weak var delegate: FollowerListVCDelegate?
+  weak var delegate: UserInfoVCDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -97,7 +96,7 @@ class UserInfoVC: UIViewController {
       itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
       
       dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-      dateLabel.heightAnchor.constraint(equalToConstant: 18)
+      dateLabel.heightAnchor.constraint(equalToConstant: 50)
     ])
   }
   
@@ -114,7 +113,7 @@ class UserInfoVC: UIViewController {
   }
 }
 
-extension UserInfoVC: UserInfoVCDelegate {
+extension UserInfoVC: GFRepoItemVCDelegate {
   func didTapGitHubProfile(user: User) {
     guard let url = URL(string: user.htmlUrl) else {
       presentGFAlertOnMainThread(title: GeneralStrings.invalidUrl,
@@ -124,7 +123,9 @@ extension UserInfoVC: UserInfoVCDelegate {
     }
     presentSafariVC(url: url)
   }
-  
+}
+
+extension UserInfoVC: GFFollowerItemVCDelegate {
   func didTapGetFollowers(user: User) {
     guard user.followers != 0 else {
       presentGFAlertOnMainThread(title: GeneralStrings.noFollowers,

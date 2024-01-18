@@ -27,8 +27,9 @@ class GFBodyLabel: UILabel {
     textColor = UIColor.secondaryLabel
     font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
     adjustsFontSizeToFitWidth = true
+    adjustsFontForContentSizeCategory = true
     minimumScaleFactor = 0.75
-    lineBreakMode = NSLineBreakMode.byWordWrapping
+    lineBreakMode = NSLineBreakMode.byTruncatingTail
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

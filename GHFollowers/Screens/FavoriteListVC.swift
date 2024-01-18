@@ -15,18 +15,18 @@ class FavoriteListVC: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     getFavorites()
-    tableView.reloadData()
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViewController()
     configureTableView()
+    tableView.reloadData()
   }
   
   func configureViewController() {
     view.backgroundColor = UIColor.systemBackground
-    title = "Favorites"
+    title = GeneralStrings.favorites
     navigationController?.navigationBar.prefersLargeTitles = true
   }
   
@@ -37,6 +37,8 @@ class FavoriteListVC: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
+    tableView.layoutMargins = UIEdgeInsets.zero
+    tableView.separatorInset = UIEdgeInsets.zero
   }
   
   func getFavorites() {
@@ -46,7 +48,7 @@ class FavoriteListVC: UIViewController {
       case Result.success(let favorites):
         
         if favorites.isEmpty {
-          self.showEmptyStateView(with: "No favorites? \nAdd one on the follower screen.", in: self.view)
+          self.showEmptyStateView(with: GeneralStrings.noFavoritesAddOne, in: self.view)
         } else {
           self.favorites = favorites
           DispatchQueue.main.async {
@@ -56,9 +58,9 @@ class FavoriteListVC: UIViewController {
         }
 
       case Result.failure(let error):
-        self.presentGFAlertOnMainThread(title: "Something went wrong",
+        self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                         message: error.rawValue,
-                                        buttonTitle: "Ok")
+                                        buttonTitle: GeneralStrings.ok)
       }
     }
   }
@@ -86,13 +88,13 @@ extension FavoriteListVC: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     guard editingStyle == UITableViewCell.EditingStyle.delete else { return }
     
-    let favorite = favorites[indexPath.row]
-    favorites.remove(at: indexPath.row)
-    tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
-    
-    PersistenceManager.updateWith(favorite: favorite, actionType: PersistenceActionType.remove) { [weak self] error in
+    PersistenceManager.updateWith(favorite: favorites[indexPath.row], actionType: PersistenceActionType.remove) { [weak self] error in
       guard let self = self else { return }
-      guard let error = error else { return }
+      guard let error = error else {
+        self.favorites.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
+        return
+      }
       self.presentGFAlertOnMainThread(title: GeneralStrings.unableToRemove,
                                       message: error.rawValue,
                                       buttonTitle: GeneralStrings.ok)

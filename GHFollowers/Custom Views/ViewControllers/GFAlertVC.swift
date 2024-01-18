@@ -78,7 +78,7 @@ class GFAlertVC: UIViewController {
   
   func configureMessageLabel() {
     containerView.addSubview(messageLabel)
-    messageLabel.text = message ?? "Unable to complete request"
+    messageLabel.text = message ?? GeneralStrings.unableToCompleteRequest
     messageLabel.numberOfLines = 4
     
     NSLayoutConstraint.activate([

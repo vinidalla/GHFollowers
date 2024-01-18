@@ -10,7 +10,6 @@ import SafariServices
 
 fileprivate var containerView: UIView = UIView()
 
-//created this extension to call every time we need to show the alert GFAlertVC on the main thread
 extension UIViewController {
   func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
     DispatchQueue.main.async {
@@ -44,8 +43,8 @@ extension UIViewController {
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+      activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+      activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
     ])
     
     activityIndicator.startAnimating()

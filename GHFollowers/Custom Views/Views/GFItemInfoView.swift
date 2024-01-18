@@ -60,7 +60,7 @@ class GFItemInfoView: UIView {
       titleLabel.text = GeneralStrings.publicRepos
     case ItemInfoType.gists:
       symbolImageView.image = UIImage(systemName: SFSymbols.gists)
-      titleLabel.text = GeneralStrings.publicRepos
+      titleLabel.text = GeneralStrings.publicGists
     case ItemInfoType.followers:
       symbolImageView.image = UIImage(systemName: SFSymbols.followers)
       titleLabel.text = GeneralStrings.followers

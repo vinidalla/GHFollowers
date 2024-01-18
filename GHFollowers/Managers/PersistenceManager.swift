@@ -23,22 +23,21 @@ enum PersistenceManager {
                          completionHandler: @escaping (GFError?) -> Void) {
     retrieveFavorites { result in
       switch result {
-      case Result.success(let favorites):
-        var retrievedFavorites = favorites
+      case Result.success(var favorites):
         
         switch actionType {
         case PersistenceActionType.add:
-          guard !retrievedFavorites.contains(favorite) else {
+          guard !favorites.contains(favorite) else {
             completionHandler(GFError.alreadyInFavorites)
             return
           }
-          retrievedFavorites.append(favorite)
+          favorites.append(favorite)
           
         case PersistenceActionType.remove:
-          retrievedFavorites.removeAll { $0.login == favorite.login}
+          favorites.removeAll { $0.login == favorite.login}
         }
         
-        completionHandler(save(favorites: retrievedFavorites))
+        completionHandler(save(favorites: favorites))
         
       case Result.failure(let error):
         completionHandler(error)

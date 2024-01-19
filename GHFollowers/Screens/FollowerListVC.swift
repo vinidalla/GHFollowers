@@ -54,8 +54,8 @@ class FollowerListVC: UIViewController {
     view.backgroundColor = UIColor.systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
     let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add,
-                                     target: self,
-                                     action: #selector(addButtonTapped))
+                                    target: self,
+                                    action: #selector(addButtonTapped))
     navigationItem.rightBarButtonItem = addButton
   }
   
@@ -81,23 +81,12 @@ class FollowerListVC: UIViewController {
     isLoadingMoreFollowers = true
     guard let username = username else { return }
     NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-
+      
       guard let self = self else { return }
       self.dismissLoadingView()
       switch result {
       case Result.success(let followers):
-        if followers.count < 100 {
-          self.hasMoreFollowers = false
-        }
-        self.followers.append(contentsOf: followers)
-        if self.followers.isEmpty {
-          let message = GeneralStrings.userHasNoFollowers
-          DispatchQueue.main.async {
-            self.showEmptyStateView(with: message, in: self.view)
-            self.navigationItem.searchController?.isActive = false
-          }
-        }
-        self.updateData(on: self.followers)
+        self.updateUI(with: followers)
       case Result.failure(let error):
         self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                         message: error.rawValue,
@@ -105,6 +94,21 @@ class FollowerListVC: UIViewController {
       }
       self.isLoadingMoreFollowers = false
     }
+  }
+  
+  func updateUI(with followers: [Follower]) {
+    if followers.count < 100 {
+      self.hasMoreFollowers = false
+    }
+    self.followers.append(contentsOf: followers)
+    if self.followers.isEmpty {
+      let message = GeneralStrings.userHasNoFollowers
+      DispatchQueue.main.async {
+        self.showEmptyStateView(with: message, in: self.view)
+        self.navigationItem.searchController?.isActive = false
+      }
+    }
+    self.updateData(on: self.followers)
   }
   
   func configureDataSource() {
@@ -127,6 +131,7 @@ class FollowerListVC: UIViewController {
   
   @objc func addButtonTapped() {
     showLoadingView()
+    
     guard let username = username else { return }
     NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
       guard let self = self else { return }
@@ -134,27 +139,30 @@ class FollowerListVC: UIViewController {
       
       switch result {
       case Result.success(let user):
-        let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-        
-        PersistenceManager.updateWith(favorite: favorite, actionType: PersistenceActionType.add) { [weak self] error in
-          guard let self = self else { return }
-          guard let error = error else {
-            self.presentGFAlertOnMainThread(title: GeneralStrings.success,
-                                            message: GeneralStrings.successfullyFavoriteUser,
-                                            buttonTitle: GeneralStrings.nice)
-            return
-          }
-          
-          self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
-                                          message: error.rawValue,
-                                          buttonTitle: GeneralStrings.ok)
-        }
-        
+        self.addUserToFavorites(user: user)
       case Result.failure(let error):
         self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
                                         message: error.rawValue,
                                         buttonTitle: GeneralStrings.ok)
       }
+    }
+  }
+  
+  func addUserToFavorites(user: User) {
+    let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+    
+    PersistenceManager.updateWith(favorite: favorite, actionType: PersistenceActionType.add) { [weak self] error in
+      guard let self = self else { return }
+      guard let error = error else {
+        self.presentGFAlertOnMainThread(title: GeneralStrings.success,
+                                        message: GeneralStrings.successfullyFavoriteUser,
+                                        buttonTitle: GeneralStrings.nice)
+        return
+      }
+      
+      self.presentGFAlertOnMainThread(title: GeneralStrings.somethingWentWrong,
+                                      message: error.rawValue,
+                                      buttonTitle: GeneralStrings.ok)
     }
   }
 }

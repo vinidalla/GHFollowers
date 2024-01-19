@@ -84,8 +84,6 @@ class UserInfoVC: UIViewController {
   }
   
   func layoutUI() {
-    let itemHeight: CGFloat = 140
-    
     itemViews = [headerView,
                  itemViewOne,
                  itemViewTwo,
@@ -102,13 +100,13 @@ class UserInfoVC: UIViewController {
     
     NSLayoutConstraint.activate([
       headerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
-      headerView.heightAnchor.constraint(equalToConstant: 180),
+      headerView.heightAnchor.constraint(equalToConstant: Spacing.size180),
       
       itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Spacing.size20),
-      itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
+      itemViewOne.heightAnchor.constraint(equalToConstant: Spacing.size140),
       
       itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: Spacing.size20),
-      itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+      itemViewTwo.heightAnchor.constraint(equalToConstant: Spacing.size140),
       
       dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: Spacing.size20),
       dateLabel.heightAnchor.constraint(equalToConstant: Spacing.size50)

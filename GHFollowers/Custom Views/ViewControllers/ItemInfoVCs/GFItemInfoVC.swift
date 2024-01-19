@@ -14,10 +14,10 @@ protocol ItemInfoVCDelegate: AnyObject {
 
 class GFItemInfoVC: UIViewController {
   
-  let stackView: UIStackView = UIStackView()
-  let itemInfoViewOne: GFItemInfoView = GFItemInfoView()
-  let itemInfoViewTwo: GFItemInfoView = GFItemInfoView()
-  let actionButton: GFButton = GFButton()
+  let stackView = UIStackView()
+  let itemInfoViewOne = GFItemInfoView()
+  let itemInfoViewTwo = GFItemInfoView()
+  let actionButton = GFButton()
   
   var user: User?
   

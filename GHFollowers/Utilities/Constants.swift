@@ -14,6 +14,9 @@ enum SFSymbols {
   static let following: String = "person.2"
   static let gists: String = "text.alignleft"
   static let location: String = "mappin.and.ellipse"
+  static let checkMarkOk: String = "checkmark.circle"
+  static let person: String = "person"
+  static let person3: String = "person.3"
 }
 
 enum Images {

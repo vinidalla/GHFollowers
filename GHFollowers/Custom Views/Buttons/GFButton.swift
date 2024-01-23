@@ -13,10 +13,9 @@ class GFButton: UIButton {
     configure()
   }
 
-  convenience init(backgroundColor: UIColor, title: String) {
+  convenience init(color: UIColor, title: String, systemImageName: String) {
     self.init(frame: CGRect.zero)
-    self.backgroundColor = backgroundColor
-    self.setTitle(title, for: UIControl.State.normal)
+    set(color: color, title: title, systemImageName: systemImageName)
   }
   
   required init?(coder: NSCoder) {
@@ -24,14 +23,17 @@ class GFButton: UIButton {
   }
   
   private func configure() {
-    layer.cornerRadius = Spacing.size10
-    setTitleColor(UIColor.white, for: UIControl.State.normal)
-    titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+    configuration = UIButton.Configuration.filled()
+    configuration?.cornerStyle = UIButton.Configuration.CornerStyle.medium
     translatesAutoresizingMaskIntoConstraints = false
   }
   
-  func set(backgroundColor: UIColor, title: String) {
-    self.backgroundColor =  backgroundColor
-    setTitle(title, for: UIControl.State.normal)
+  func set(color: UIColor, title: String, systemImageName: String) {
+    configuration?.baseBackgroundColor = color
+    configuration?.title = title
+    
+    configuration?.image = UIImage(systemName: systemImageName)
+    configuration?.imagePadding = Spacing.size2
+    configuration?.imagePlacement = NSDirectionalRectEdge.leading
   }
 }

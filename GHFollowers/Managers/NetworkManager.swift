@@ -18,23 +18,22 @@ class NetworkManager {
   func getFollowers(for username: String, page: Int, completionHandler: @escaping(Result<[Follower], GFError>) -> Void) {
     let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
     
-    //certification that the request worked, otherwise return error
     guard let url = URL(string: endpoint) else {
       completionHandler(Result.failure(GFError.invalidUserName))
       return
     }
-    //URLSession return data, response and error
+
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      if let _ = error { //handle no internet error
+      if let _ = error {
         completionHandler(Result.failure(GFError.unableToComplete))
         return
       }
-      //checking if the response is not nil and the statusCode is 200, which means everything is OK
+
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
         completionHandler(Result.failure(GFError.invalidResponse))
         return
       }
-      //checking if the data is not nil
+
       guard let data = data else {
         completionHandler(Result.failure(GFError.invalidData))
         return
@@ -42,39 +41,38 @@ class NetworkManager {
       
       do {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase //convert snake_case to camelCase
-        //try to decode an array of followers from the data
+        decoder.keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
+
         let followers = try decoder.decode([Follower].self, from: data)
-        //everything goes well so we have followers and error is nil
+
         completionHandler(Result.success(followers))
-      } catch { //error handing
+      } catch {
         completionHandler(Result.failure(GFError.invalidData))
       }
     }
     
-    task.resume() //this starts the network call
+    task.resume()
   }
   
   func getUserInfo(for username: String, completionHandler: @escaping(Result<User, GFError>) -> Void) {
     let endpoint = baseURL + "\(username)"
     
-    //certification that the request worked, otherwise return error
     guard let url = URL(string: endpoint) else {
       completionHandler(Result.failure(GFError.invalidUserName))
       return
     }
-    //URLSession return data, response and error
+
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      if let _ = error { //handle no internet error
+      if let _ = error {
         completionHandler(Result.failure(GFError.unableToComplete))
         return
       }
-      //checking if the response is not nil and the statusCode is 200, which means everything is OK
+
       guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
         completionHandler(Result.failure(GFError.invalidResponse))
         return
       }
-      //checking if the data is not nil
+
       guard let data = data else {
         completionHandler(Result.failure(GFError.invalidData))
         return
@@ -82,18 +80,18 @@ class NetworkManager {
       
       do {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase //convert snake_case to camelCase
+        decoder.keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
         decoder.dateDecodingStrategy = JSONDecoder.DateDecodingStrategy.iso8601
-        //try to decode an array of followers from the data
+
         let user = try decoder.decode(User.self, from: data)
-        //everything goes well so we have followers and error is nil
+
         completionHandler(Result.success(user))
-      } catch { //error handing
+      } catch {
         completionHandler(Result.failure(GFError.invalidData))
       }
     }
     
-    task.resume() //this starts the network call
+    task.resume() 
   }
   
   func downloadAvatarImage(from urlString: String, completionHandler: @escaping (UIImage?) -> Void) {

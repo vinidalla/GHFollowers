@@ -29,6 +29,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "icon_76pt.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
@@ -101,6 +102,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "Icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

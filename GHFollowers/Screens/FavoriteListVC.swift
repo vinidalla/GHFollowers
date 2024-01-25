@@ -95,6 +95,9 @@ extension FavoriteListVC: UITableViewDataSource, UITableViewDelegate {
       guard let error = error else {
         self.favorites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
+        if self.favorites.isEmpty {
+          self.showEmptyStateView(with: GeneralStrings.noFavoritesAddOne, in: self.view)
+        }
         return
       }
       self.presentGFAlertOnMainThread(title: GeneralStrings.unableToRemove,

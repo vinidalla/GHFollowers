@@ -42,10 +42,10 @@ class GFEmptyStateView: UIView {
       messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Spacing.size40),
       messageLabel.heightAnchor.constraint(equalToConstant: Spacing.size200),
       
-      logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
-      logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
-      logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Spacing.size180),
-      logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Spacing.size40)
+      logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.1),
+      logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.1),
+      logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Spacing.size140),
+      logoImageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: Spacing.size40)
     ])
   }
 }

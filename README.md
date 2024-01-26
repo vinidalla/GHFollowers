@@ -35,10 +35,7 @@ The app also includes a favorites list to add people of interest, as well as off
 
 #### iPhone 14 Pro Max
 
-![Simulator Screen Recording - iPhone 14 Pro Max - 2024-01-26 at 08 29 58](https://github.com/vinidalla/GHFollowers/assets/95320124/80e8c860-8e61-4600-b0be-5256f836780b)   ![Simulator Screen Recording - iPhone 14 Pro Max - 2024-01-26 at 09 34 10](https://github.com/vinidalla/GHFollowers/assets/95320124/d56c8f11-f178-4422-be26-86b56575108e)
-![Home](https://github.com/vinidalla/GHFollowers/assets/95320124/5e1b4215-b94b-431d-be80-707332b01bd4) ![User Followers](https://github.com/vinidalla/GHFollowers/assets/95320124/75ebf73f-1cf6-4aaf-a367-c9ee407ec278) 
-![User profile details](https://github.com/vinidalla/GHFollowers/assets/95320124/754d7e11-6d65-4037-87d0-7d1eee056af0)
-![List of favorites](https://github.com/vinidalla/GHFollowers/assets/95320124/1c858441-3f28-4f64-831e-e9528a40f90d)
+![Simulator Screen Recording - iPhone 14 Pro Max - 2024-01-26 at 08 29 58](https://github.com/vinidalla/GHFollowers/assets/95320124/80e8c860-8e61-4600-b0be-5256f836780b)   ![Simulator Screen Recording - iPhone 14 Pro Max - 2024-01-26 at 09 34 10](https://github.com/vinidalla/GHFollowers/assets/95320124/d56c8f11-f178-4422-be26-86b56575108e) ![Home](https://github.com/vinidalla/GHFollowers/assets/95320124/5e1b4215-b94b-431d-be80-707332b01bd4) ![User Followers](https://github.com/vinidalla/GHFollowers/assets/95320124/75ebf73f-1cf6-4aaf-a367-c9ee407ec278) ![User profile details](https://github.com/vinidalla/GHFollowers/assets/95320124/754d7e11-6d65-4037-87d0-7d1eee056af0)![List of favorites](https://github.com/vinidalla/GHFollowers/assets/95320124/1c858441-3f28-4f64-831e-e9528a40f90d)
 
 ## Coming Soon
 

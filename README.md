@@ -28,7 +28,8 @@ The app also includes a favorites list to add people of interest, as well as off
 
 1. Clone or download this repository.
 2. Open ```.xcodeproj``` file using [Xcode](https://apps.apple.com/br/app/xcode/id497799835?mt=12).
-3. Hit ```Command (⌘) + R``` and enjoy.
+3. Menu Source Control -> Clone -> enter URL
+4. Hit ```Command (⌘) + R``` and enjoy.
 
 # Screenshots
 

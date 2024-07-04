@@ -118,7 +118,7 @@
 				4F5580822B4FEB14007F1738 /* Managers */,
 				4F55807B2B4F79CE007F1738 /* Model */,
 				4F5580792B4F7484007F1738 /* Extensions */,
-				4F5580782B4F7425007F1738 /* Custom Views */,
+				4F5580782B4F7425007F1738 /* CustomViews */,
 				4F5580772B4F7317007F1738 /* Screens */,
 			);
 			path = GHFollowers;
@@ -135,7 +135,7 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		4F5580782B4F7425007F1738 /* Custom Views */ = {
+		4F5580782B4F7425007F1738 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				4F5580B02B56949C007F1738 /* TabBarControllers */,
@@ -147,7 +147,7 @@
 				4F55808D2B532610007F1738 /* Views */,
 				4F5580862B50D2B5007F1738 /* Cells */,
 			);
-			path = "Custom Views";
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		4F5580792B4F7484007F1738 /* Extensions */ = {
@@ -307,7 +307,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					4F55804B2B45614B007F1738 = {
 						CreatedOnToolsVersion = 14.3;
@@ -423,6 +423,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -483,6 +484,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

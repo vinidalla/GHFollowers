@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-fileprivate var containerView: UIView = UIView()
+var containerView: UIView = UIView()
 
 extension UIViewController {
   

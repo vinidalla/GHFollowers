@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2D427B2C3B1A2600ECB655 /* FollowerListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D427A2C3B1A2600ECB655 /* FollowerListVCTests.swift */; };
 		4F5580662B46C62B007F1738 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580652B46C62B007F1738 /* SearchVC.swift */; };
 		4F5580682B46C66E007F1738 /* FavoriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580672B46C66E007F1738 /* FavoriteListVC.swift */; };
 		4F55806A2B48180D007F1738 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5580692B48180D007F1738 /* GFButton.swift */; };
@@ -43,7 +44,19 @@
 		4FEA77A62B5A96F300A3852F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA77A22B5A96F300A3852F /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4F2D42742C3B16B000ECB655 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F5580442B45614B007F1738 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F55804B2B45614B007F1738;
+			remoteInfo = GHFollowers;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4F2D42702C3B16B000ECB655 /* GHFollowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2D427A2C3B1A2600ECB655 /* FollowerListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVCTests.swift; sourceTree = "<group>"; };
 		4F55804C2B45614B007F1738 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55805D2B45614D007F1738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F5580652B46C62B007F1738 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -83,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F2D426D2C3B16B000ECB655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F5580492B45614B007F1738 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,10 +113,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2D42712C3B16B000ECB655 /* GHFollowersTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F2D42792C3B19EC00ECB655 /* ScreenTests */,
+			);
+			path = GHFollowersTests;
+			sourceTree = "<group>";
+		};
+		4F2D42792C3B19EC00ECB655 /* ScreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F2D427A2C3B1A2600ECB655 /* FollowerListVCTests.swift */,
+			);
+			path = ScreenTests;
+			sourceTree = "<group>";
+		};
 		4F5580432B45614B007F1738 = {
 			isa = PBXGroup;
 			children = (
 				4F55804E2B45614B007F1738 /* GHFollowers */,
+				4F2D42712C3B16B000ECB655 /* GHFollowersTests */,
 				4F55804D2B45614B007F1738 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4F55804C2B45614B007F1738 /* GHFollowers.app */,
+				4F2D42702C3B16B000ECB655 /* GHFollowersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,6 +320,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4F2D426F2C3B16B000ECB655 /* GHFollowersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2D42762C3B16B000ECB655 /* Build configuration list for PBXNativeTarget "GHFollowersTests" */;
+			buildPhases = (
+				4F2D426C2C3B16B000ECB655 /* Sources */,
+				4F2D426D2C3B16B000ECB655 /* Frameworks */,
+				4F2D426E2C3B16B000ECB655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F2D42752C3B16B000ECB655 /* PBXTargetDependency */,
+			);
+			name = GHFollowersTests;
+			productName = GHFollowersTests;
+			productReference = 4F2D42702C3B16B000ECB655 /* GHFollowersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4F55804B2B45614B007F1738 /* GHFollowers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F5580602B45614D007F1738 /* Build configuration list for PBXNativeTarget "GHFollowers" */;
@@ -306,9 +362,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					4F2D426F2C3B16B000ECB655 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 4F55804B2B45614B007F1738;
+					};
 					4F55804B2B45614B007F1738 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -328,11 +388,19 @@
 			projectRoot = "";
 			targets = (
 				4F55804B2B45614B007F1738 /* GHFollowers */,
+				4F2D426F2C3B16B000ECB655 /* GHFollowersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F2D426E2C3B16B000ECB655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F55804A2B45614B007F1738 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +412,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F2D426C2C3B16B000ECB655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2D427B2C3B1A2600ECB655 /* FollowerListVCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F5580482B45614B007F1738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,7 +462,60 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4F2D42752C3B16B000ECB655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F55804B2B45614B007F1738 /* GHFollowers */;
+			targetProxy = 4F2D42742C3B16B000ECB655 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4F2D42772C3B16B000ECB655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7PN29D3K8;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinidalla.GHFollowersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GHFollowers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GHFollowers";
+			};
+			name = Debug;
+		};
+		4F2D42782C3B16B000ECB655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7PN29D3K8;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinidalla.GHFollowersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GHFollowers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GHFollowers";
+			};
+			name = Release;
+		};
 		4F55805E2B45614D007F1738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,6 +695,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F2D42762C3B16B000ECB655 /* Build configuration list for PBXNativeTarget "GHFollowersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2D42772C3B16B000ECB655 /* Debug */,
+				4F2D42782C3B16B000ECB655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4F5580472B45614B007F1738 /* Build configuration list for PBXProject "GHFollowers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

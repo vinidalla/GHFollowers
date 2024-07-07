@@ -1,32 +1,21 @@
 //
-//  FollowerListVCTests.swift
-//  GHFollowersTests
+//  SearchVCTests.swift
+//  GHFollowers
 //
 //  Created by Vinícius Dalla Vechia on 07/07/24.
 //
 
 import XCTest
-@testable import GHFollowers
 
-final class FollowerListVCTests: XCTestCase {
-  
-  var sut: FollowerListVC!
+final class SearchVCTests: XCTestCase {
 
-  override func setUpWithError() throws {
-    sut = FollowerListVC(username: "testuser")
-    sut.loadViewIfNeeded()
-  }
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
 
-  override func tearDownWithError() throws {
-    sut = nil
-  }
-  
-  func testInitializationUserNameEntered() {
-      XCTAssertEqual(sut.username, "testuser")
-      XCTAssertEqual(sut.title, "testuser")
-      XCTAssertNotNil(sut.collectionView)
-      XCTAssertNotNil(sut.dataSource)
-  }
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.

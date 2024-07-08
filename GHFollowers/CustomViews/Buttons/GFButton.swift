@@ -12,7 +12,7 @@ class GFButton: UIButton {
     super.init(frame: frame)
     configure()
   }
-
+  
   convenience init(color: UIColor, title: String, systemImageName: String) {
     self.init(frame: CGRect.zero)
     set(color: color, title: title, systemImageName: systemImageName)

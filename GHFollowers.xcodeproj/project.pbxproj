@@ -126,7 +126,7 @@
 		4F2D42712C3B16B000ECB655 /* GHFollowersTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F2D42852C3C5B7200ECB655 /* Utilities */,
+				4F2D42852C3C5B7200ECB655 /* UtilitiesTests */,
 				4F2D42792C3B19EC00ECB655 /* ScreenTests */,
 			);
 			path = GHFollowersTests;
@@ -142,14 +142,14 @@
 			path = ScreenTests;
 			sourceTree = "<group>";
 		};
-		4F2D42852C3C5B7200ECB655 /* Utilities */ = {
+		4F2D42852C3C5B7200ECB655 /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
 				4F2D42862C3C5B8D00ECB655 /* ConstantsTests.swift */,
 				4F2D42882C3C5ED800ECB655 /* GFErrorTests.swift */,
 				4F2D428A2C3C612700ECB655 /* UIHelperTests.swift */,
 			);
-			path = Utilities;
+			path = UtilitiesTests;
 			sourceTree = "<group>";
 		};
 		4F5580432B45614B007F1738 = {

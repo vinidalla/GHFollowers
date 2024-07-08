@@ -5,8 +5,6 @@
 //  Created by Vinícius Dalla Vechia on 14/01/24.
 //
 
-import Foundation
-
 enum GFError: String, Error {
   
   case invalidUserName = "This username created an invalid request. Please try again."

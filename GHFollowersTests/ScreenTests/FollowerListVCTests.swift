@@ -23,7 +23,7 @@ final class FollowerListVCTests: XCTestCase {
     sut = nil
   }
   
-  func testInitializationUserNameAndTitleEnteredCorrectly() {
+  func testInitializationUserNameAndTitleEntered() {
     XCTAssertEqual(sut.username, "testuser")
     XCTAssertEqual(sut.title, "testuser")
   }
